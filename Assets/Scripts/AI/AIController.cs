@@ -2,6 +2,8 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Meta.WitAi.TTS.Utilities;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR;
 using System;
 
 namespace OpenAI
@@ -15,46 +17,42 @@ namespace OpenAI
         public string prompt = "Act as a random stranger in a chat room and reply to the questions. Don't break character. Don't ever mention that you are an AI model.";
         public TTSSpeaker speaker;
         public SpeechToText speechToText;
-
         public Transform player;
         public float interactionDistance = 3.0f;
+        private InputData _inputData;
 
         private void Start()
-    {
-        // Iterate through all the button names defined in the InputManager.
-        foreach (KeyCode keyCode in System.Enum.GetValues(typeof(KeyCode)))
         {
-            // Check if the button corresponds to an Oculus Rift S controller button.
-            if (keyCode.ToString().StartsWith("JoystickButton"))
-            {
-                Debug.Log("Detected Oculus Button: " + keyCode.ToString());
-            }
+            _inputData = GetComponent<InputData>();
         }
-    }
 
         private async void Update()
         {
-            if (player != null && !isRecording)
+            var names = Input.GetJoystickNames();
+            Console.WriteLine(names);
+           
+            if (player != null)
             {
                 float distance = Vector3.Distance(player.position, transform.position);
 
                 if (distance <= interactionDistance)
                 {
+                    _inputData._rightController.TryGetFeatureValue(CommonUsages.primaryButton, out bool Abutton);
+                    _inputData._rightController.TryGetFeatureValue(CommonUsages.secondaryButton, out bool Bbutton);
                     // Player is within interaction distance, initiate conversation here.
-                    // You can call the SendReply method or any other conversation logic here.
-                    if (Input.GetButtonDown("JoystickButton2"))
+                    if (Abutton == true && !isRecording)
                     {
                         isRecording = true;
-                        // speechToText.StartRecording();
-                        Console.WriteLine("Recording!");
+                        speechToText.StartRecording();
+                        Debug.Log("Start Recording!");
                     }
 
-                    if (Input.GetButtonUp("JoystickButton2"))
+                    if (Bbutton == true && isRecording)
                     {
                         isRecording = false;
-                        Console.WriteLine("Stop Recording!");
-                        // string textResult = await speechToText.StopRecording();
-                        // await SendReply(textResult);
+                        Debug.Log("Stop Recording!");
+                        string textResult = await speechToText.StopRecording();
+                        await SendReply(textResult);
                     }
                 }
             }
@@ -88,6 +86,8 @@ namespace OpenAI
 
                 _messages.Add(message);
                 _npcResponse = message.Content;
+
+                Debug.Log("NPC Response: " + _npcResponse);
 
                 speaker.Speak(_npcResponse);
             }

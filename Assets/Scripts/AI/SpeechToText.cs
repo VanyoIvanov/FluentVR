@@ -49,6 +49,8 @@ namespace OpenAI
             };
             var res = await openai.CreateAudioTranscription(req);
 
+            Debug.Log("Audio Transcription: " + res.Text);
+
             return res.Text;
         }
     }
