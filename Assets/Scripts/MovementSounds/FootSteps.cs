@@ -63,7 +63,6 @@ public class FootSteps : MonoBehaviour
         }
 
         bool keyboardMove = Input.GetButton("Vertical") || Input.GetButton("Horizontal");
-        Debug.Log(keyboardMove || thumbstickMove);
 
         return keyboardMove || thumbstickMove;
     }

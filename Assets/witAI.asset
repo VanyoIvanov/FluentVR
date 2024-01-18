@@ -28,7 +28,7 @@ MonoBehaviour:
     traits: []
     versionTags: []
     voices:
-    - name: wit/Rebecca
+    - name: wit$Rebecca
       locale: en_US
       gender: female
       styles:
@@ -37,7 +37,7 @@ MonoBehaviour:
       - formal
       - fast
       - projected
-    - name: wit/Charlie
+    - name: wit$Charlie
       locale: en_US
       gender: male
       styles:
@@ -45,16 +45,7 @@ MonoBehaviour:
       - soft
       - fast
       - projected
-    - name: wit/Cooper
-      locale: en_US
-      gender: male
-      styles:
-      - default
-      - soft
-      - formal
-      - fast
-      - projected
-    - name: wit/Vampire
+    - name: wit$Cooper
       locale: en_US
       gender: male
       styles:
@@ -63,12 +54,7 @@ MonoBehaviour:
       - formal
       - fast
       - projected
-    - name: wit/Prospector
-      locale: en_US
-      gender: male
-      styles:
-      - default
-    - name: wit/Cody
+    - name: wit$Vampire
       locale: en_US
       gender: male
       styles:
@@ -77,7 +63,21 @@ MonoBehaviour:
       - formal
       - fast
       - projected
-    - name: wit/Remi
+    - name: wit$Prospector
+      locale: en_US
+      gender: male
+      styles:
+      - default
+    - name: wit$Cody
+      locale: en_US
+      gender: male
+      styles:
+      - default
+      - soft
+      - formal
+      - fast
+      - projected
+    - name: wit$Remi
       locale: en_US
       gender: female
       styles:
@@ -86,7 +86,7 @@ MonoBehaviour:
       - formal
       - fast
       - projected
-    - name: wit/Cam
+    - name: wit$Cam
       locale: en_US
       gender: male
       styles:
@@ -95,7 +95,7 @@ MonoBehaviour:
       - formal
       - fast
       - projected
-    - name: wit/Connor
+    - name: wit$Connor
       locale: en_US
       gender: male
       styles:
@@ -104,7 +104,7 @@ MonoBehaviour:
       - formal
       - fast
       - projected
-    - name: wit/Railey
+    - name: wit$Railey
       locale: en_US
       gender: female
       styles:
@@ -113,7 +113,7 @@ MonoBehaviour:
       - formal
       - fast
       - projected
-    - name: wit/Cael
+    - name: wit$Cael
       locale: en_US
       gender: male
       styles:
@@ -122,7 +122,7 @@ MonoBehaviour:
       - formal
       - fast
       - projected
-    - name: wit/Carl
+    - name: wit$Carl
       locale: en_US
       gender: male
       styles:
@@ -131,7 +131,7 @@ MonoBehaviour:
       - formal
       - fast
       - projected
-    - name: wit/Rubie
+    - name: wit$Rubie
       locale: en_US
       gender: female
       styles:
@@ -140,7 +140,7 @@ MonoBehaviour:
       - formal
       - fast
       - projected
-    - name: wit/Overconfident
+    - name: wit$Overconfident
       locale: en_US
       gender: male
       styles:
@@ -149,7 +149,7 @@ MonoBehaviour:
       - formal
       - fast
       - projected
-    - name: wit/Disaffected
+    - name: wit$Disaffected
       locale: en_US
       gender: female
       styles:
@@ -158,7 +158,7 @@ MonoBehaviour:
       - formal
       - fast
       - projected
-    - name: wit/Hollywood
+    - name: wit$Hollywood
       locale: en_US
       gender: female
       styles:
@@ -167,7 +167,7 @@ MonoBehaviour:
       - formal
       - fast
       - projected
-    - name: wit/Trendy
+    - name: wit$Trendy
       locale: en_US
       gender: female
       styles:
@@ -176,7 +176,7 @@ MonoBehaviour:
       - formal
       - fast
       - projected
-    - name: wit/Cartoon Baby
+    - name: wit$Cartoon Baby
       locale: en_US
       gender: nonbinary
       styles:
@@ -185,7 +185,7 @@ MonoBehaviour:
       - formal
       - fast
       - projected
-    - name: wit/Surfer
+    - name: wit$Surfer
       locale: en_US
       gender: male
       styles:
@@ -194,7 +194,7 @@ MonoBehaviour:
       - formal
       - fast
       - projected
-    - name: wit/Southern Accent
+    - name: wit$Southern Accent
       locale: en_US
       gender: male
       styles:
@@ -203,7 +203,7 @@ MonoBehaviour:
       - formal
       - fast
       - projected
-    - name: wit/Kenyan Accent
+    - name: wit$Kenyan Accent
       locale: en_US
       gender: female
       styles:
@@ -212,7 +212,7 @@ MonoBehaviour:
       - formal
       - fast
       - projected
-    - name: wit/Cartoon Kid
+    - name: wit$Cartoon Kid
       locale: en_US
       gender: female
       styles:
@@ -221,7 +221,7 @@ MonoBehaviour:
       - formal
       - fast
       - projected
-    - name: wit/Cartoon Villain
+    - name: wit$Cartoon Villain
       locale: en_US
       gender: female
       styles:
@@ -230,7 +230,7 @@ MonoBehaviour:
       - formal
       - fast
       - projected
-    - name: wit/Rosie
+    - name: wit$Rosie
       locale: en_CA
       gender: female
       styles:
@@ -239,7 +239,7 @@ MonoBehaviour:
       - formal
       - fast
       - projected
-    - name: wit/Colin
+    - name: wit$Colin
       locale: en_CA
       gender: male
       styles:
@@ -248,7 +248,7 @@ MonoBehaviour:
       - formal
       - fast
       - projected
-    - name: wit/Pirate
+    - name: wit$Pirate
       locale: en_GB
       gender: male
       styles:
@@ -257,7 +257,7 @@ MonoBehaviour:
       - formal
       - fast
       - projected
-    - name: wit/British Butler
+    - name: wit$British Butler
       locale: en_GB
       gender: male
       styles:
@@ -266,7 +266,7 @@ MonoBehaviour:
       - formal
       - fast
       - projected
-    - name: wit/Whimsical
+    - name: wit$Whimsical
       locale: en_GB
       gender: female
       styles:
@@ -275,7 +275,7 @@ MonoBehaviour:
       - formal
       - fast
       - projected
-    - name: wit/Wizard
+    - name: wit$Wizard
       locale: en_GB
       gender: male
       styles:
@@ -284,7 +284,7 @@ MonoBehaviour:
       - formal
       - fast
       - projected
-    - name: wit/Cockney Accent
+    - name: wit$Cockney Accent
       locale: en_GB
       gender: nonbinary
       styles:
