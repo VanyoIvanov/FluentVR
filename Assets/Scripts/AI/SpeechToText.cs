@@ -6,6 +6,7 @@ namespace OpenAI
 {
     public class SpeechToText : MonoBehaviour
     {
+        public string language = "en";
         private readonly int duration = 10;
         private AudioClip clip;
         private float time;
@@ -45,7 +46,7 @@ namespace OpenAI
             {
                 FileData = new FileData() { Data = data, Name = "audio.wav" },
                 Model = "whisper-1",
-                Language = "en"
+                Language = language
             };
             var res = await openai.CreateAudioTranscription(req);
 
