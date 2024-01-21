@@ -14,7 +14,7 @@ namespace OpenAI
         private List<ChatMessage> _messages = new List<ChatMessage>();
         private string _npcResponse = "";
         private bool isRecording = false;
-        public string prompt = "Act as a random stranger in a chat room and reply to the questions. Don't break character. Don't ever mention that you are an AI model.";
+        public string npcName = ""; 
         public TTSSpeaker speaker;
         public SpeechToText speechToText;
         public Transform player;
@@ -60,6 +60,7 @@ namespace OpenAI
 
         public async Task SendReply(string userMessage)
         {
+            string prompt = $"Act as a {npcName} in a chat room and reply to the questions. Don't break character. Don't ever mention that you are an AI model. Keep your replies short, no more than one or two sentences.";
             var newMessage = new ChatMessage()
             {
                 Role = "user",
