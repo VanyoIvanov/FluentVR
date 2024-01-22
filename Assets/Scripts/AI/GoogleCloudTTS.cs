@@ -18,17 +18,9 @@ public class GoogleCloudTTS : MonoBehaviour
 	public double voiceRate;
 	public string langCode = "es-ES";
 	public string voiceName = "es-ES-Neural2-A";
+	public SsmlVoiceGender voiceGender = SsmlVoiceGender.MALE;
 
 	public AudioSource audioSource;
-
-	private void Awake()
-	{
-		if (Instance == null) {
-			Instance = this;
-		} else {
-      			Destroy(gameObject);
-    		}
-	}
 
 	private void SynthSuccess(string audioData)
 	{
@@ -54,7 +46,8 @@ public class GoogleCloudTTS : MonoBehaviour
 	{
 		float[] floatArr = new float[(array.Length / 2) - 22];
 
-		for (int i = 0; i < floatArr.Length; i++) {
+		for (int i = 0; i < floatArr.Length; i++)
+		{
 			floatArr[i] = ((float)BitConverter.ToInt16(array, i * 2)) / 32768.0f;
 		}
 
@@ -73,7 +66,11 @@ public class GoogleCloudTTS : MonoBehaviour
 		newRequest.audioConfig = GetAudioConfig();
 		newRequest.voice = GetVoiceConfig();
 
+		// Access AudioSource dynamically
+		AudioSource audioSource = GetComponent<AudioSource>();
+
 		string requestJson = JsonConvert.SerializeObject(newRequest);
+		Debug.Log("Request JSON: " + requestJson);  // Log the request JSON for debugging
 		byte[] bytes = Encoding.UTF8.GetBytes(requestJson);
 		string url = postSynthURL + "?key=" + apiKey;
 		var headers = new Dictionary<string, string>();
@@ -82,16 +79,28 @@ public class GoogleCloudTTS : MonoBehaviour
 
 		yield return www;
 
-		if (www.error != null) {
+		if (www.error != null)
+		{
 			Debug.Log("Error: " + www.error);
-		} else {
+			Debug.Log("Response: " + www.text);  // Log the response for debugging
+
+			// Handle the specific error in the response
+			if (!string.IsNullOrEmpty(www.text) && www.text.Contains("error"))
+			{
+				// Log additional details about the error
+				Debug.LogError("Error in API response: " + www.text);
+			}
+		}
+		else
+		{
 			SynthSuccess(www.text);
 		}
 	}
 
 	AudioConfig GetAudioConfig()
 	{
-		return new AudioConfig() {
+		return new AudioConfig()
+		{
 			audioEncoding = AudioEncoding.LINEAR16,
 			pitch = voicePitch,
 			sampleRateHertz = sampleRate,
@@ -101,10 +110,11 @@ public class GoogleCloudTTS : MonoBehaviour
 	}
 	VoiceConfig GetVoiceConfig()
 	{
-		return new VoiceConfig() {
+		return new VoiceConfig()
+		{
 			languageCode = langCode,
 			name = voiceName,
-			ssmlGender = SsmlVoiceGender.MALE
+			ssmlGender = voiceGender
 		};
 	}
 }
