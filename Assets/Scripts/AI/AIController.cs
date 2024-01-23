@@ -13,7 +13,7 @@ namespace OpenAI
     {
         private OpenAIApi _openai = new OpenAIApi();
         private List<ChatMessage> _messages = new List<ChatMessage>();
-        private string _npcResponse = "";
+        public string npcResponse = "";
         private bool isRecording = false;
         public string npcName = ""; 
         public TTSSpeaker speaker;
@@ -22,14 +22,10 @@ namespace OpenAI
         public float interactionDistance = 3.0f;
         private InputData _inputData;
         private GameObject textResponseObject;
-        private LetterByLetterAnimator letterAnimator;
-        public string text = "dali be";
 
        private void Awake()
         {
             textResponseObject = GameObject.Find("TextResponse");
-            //letterAnimator = textResponseObject.GetComponent<LetterByLetterAnimator>();
-
         }
 
         private void Start()
@@ -50,12 +46,6 @@ namespace OpenAI
         {
             _inputData._rightController.TryGetFeatureValue(CommonUsages.primaryButton, out bool Abutton);
             _inputData._rightController.TryGetFeatureValue(CommonUsages.secondaryButton, out bool Bbutton);
-
-            //textResponseObject.gameObject.SetActive(true);
-            Debug.Log("Updating ??");
-            //var textMeshPro = textResponseObject.GetComponent<TextMeshPro>();
-           // string text = "This is the new text.";
-            //textMeshPro.text = text;
 
             if (Abutton == true && !isRecording)
             {
@@ -106,11 +96,12 @@ namespace OpenAI
                 message.Content = message.Content.Trim();
 
                 _messages.Add(message);
-                _npcResponse = message.Content;
+                npcResponse = message.Content;
+                FindObjectOfType<LetterByLetterAnimator>()?.AnimateText(npcResponse);
 
-                Debug.Log("NPC Response: " + _npcResponse);
+                Debug.Log("NPC Response: " + npcResponse);
 
-                speaker.Speak(_npcResponse);
+                speaker.Speak(npcResponse);
             }
             else
             {
