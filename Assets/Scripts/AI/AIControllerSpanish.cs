@@ -14,7 +14,7 @@ namespace OpenAI
         private List<ChatMessage> _messages = new List<ChatMessage>();
         private string _npcResponse = "";
         private bool isRecording = false;
-        public string prompt = "Actúa como un desconocido al azar en una sala de chat y responde a las preguntas. No rompas el personaje. Nunca menciones que eres un modelo de IA.";
+        public string npcName = "";
         public SpeechToText speechToText;
         public GoogleCloudTTS GoogleCloudTTS;
         public Transform player;
@@ -60,6 +60,7 @@ namespace OpenAI
 
         public async Task SendReply(string userMessage)
         {
+            string prompt = $"Actúa como {npcName} en una sala de chat y responde las preguntas. No rompas el carácter. Nunca menciones que eres un modelo de IA. Mantenga sus respuestas breves, no más de una o dos oraciones.";
             var newMessage = new ChatMessage()
             {
                 Role = "user",
