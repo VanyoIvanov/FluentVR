@@ -27,10 +27,7 @@ namespace OpenAI
         }
 
         private async void Update()
-        {
-            var names = Input.GetJoystickNames();
-            Console.WriteLine(names);
-           
+        {           
             if (player != null)
             {
                 float distance = Vector3.Distance(player.position, transform.position);
