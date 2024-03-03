@@ -2,10 +2,12 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
+
 public class LetterByLetterAnimator : MonoBehaviour
 {
     [SerializeField] private TextMeshPro textMeshPro;
-    [SerializeField] private GameObject npc;
+    [SerializeField] public GameObject npc;
+    [SerializeField] public string npcName;
     [SerializeField] private float letterDelay = 0.1f;
     private Coroutine currentAnimation;
 
@@ -31,13 +33,18 @@ public class LetterByLetterAnimator : MonoBehaviour
     {
         if (originalText != null)
         {
-            textMeshPro.text = ""; // Clear the text
+            textMeshPro.text = "";
 
             foreach (char letter in originalText)
             {
                 textMeshPro.text += letter;
                 yield return new WaitForSeconds(letterDelay);
             }
+             // Wait for 15 seconds after animation completes
+            yield return new WaitForSeconds(15f);
+
+            // Clear the text after 15 seconds
+            textMeshPro.text = "";
         }
         else
         {

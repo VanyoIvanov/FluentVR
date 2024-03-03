@@ -97,9 +97,19 @@ namespace OpenAI
 
                 _messages.Add(message);
                 npcResponse = message.Content;
-                FindObjectOfType<LetterByLetterAnimator>()?.AnimateText(npcResponse);
+                var letterByLetterAnimators = FindObjectsOfType<LetterByLetterAnimator>();
+                 foreach (var animator in letterByLetterAnimators)
+                    {
+                        Debug.Log(npcName);
+                        Debug.Log(animator.npcName);
+                        if (animator.npcName == npcName)
+                        {
+                            animator.AnimateText(npcResponse);
+                        }
+                    }
+           
 
-                Debug.Log("NPC Response: " + npcResponse);
+                Debug.Log(npcName +": " +  npcResponse);
 
                 speaker.Speak(npcResponse);
             }
