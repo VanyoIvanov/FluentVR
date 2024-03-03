@@ -85,7 +85,18 @@ namespace OpenAI
                 _messages.Add(message);
                 _npcResponse = message.Content;
 
-                Debug.Log("NPC Response: " + _npcResponse);
+                var letterByLetterAnimators = FindObjectsOfType<LetterByLetterAnimator>();
+                 foreach (var animator in letterByLetterAnimators)
+                    {
+                        Debug.Log(npcName);
+                        Debug.Log(animator.npcName);
+                        if (animator.npcName == npcName)
+                        {
+                            animator.AnimateText(_npcResponse);
+                        }
+                    }
+
+                Debug.Log( npcName + ": " + _npcResponse);
 
                 GoogleCloudTTS.Synthesize(_npcResponse);
             }
