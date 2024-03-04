@@ -57,7 +57,7 @@ namespace OpenAI
 
         public async Task SendReply(string userMessage)
         {
-            string prompt = $"Actúa como {npcName} en una sala de chat y responde las preguntas. No rompas el carácter. Nunca menciones que eres un modelo de IA. Mantenga sus respuestas breves, no más de una o dos oraciones.";
+            string prompt = $"Actúa como {npcName} en una sala de chat y responde las preguntas. No rompas el carácter. Nunca menciones que eres un modelo de IA. Mantenga sus respuestas breves, no más de una o dos oraciones en español y en búlgaro.";
             var newMessage = new ChatMessage()
             {
                 Role = "user",

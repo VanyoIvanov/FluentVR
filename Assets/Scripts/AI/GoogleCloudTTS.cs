@@ -10,7 +10,7 @@ public class GoogleCloudTTS : MonoBehaviour
 {
     public static GoogleCloudTTS Instance;
 
-    private string apiKey = "AIzaSyB3XfkaeWCZsWUD5sJYvc9a2v-XzHdC1Ac";
+    private string apiKey = "";
     private const string postSynthURL = "https://texttospeech.googleapis.com/v1beta1/text:synthesize";
     private const double sampleRate = 24000;
     public double voicePitch;
