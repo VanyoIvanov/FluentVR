@@ -5,6 +5,7 @@ using Meta.WitAi.TTS.Utilities;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR;
 using System;
+using TMPro;
 
 namespace OpenAI
 {
@@ -12,7 +13,7 @@ namespace OpenAI
     {
         private OpenAIApi _openai = new OpenAIApi();
         private List<ChatMessage> _messages = new List<ChatMessage>();
-        private string _npcResponse = "";
+        public string npcResponse = "";
         private bool isRecording = false;
         public string npcName = ""; 
         public TTSSpeaker speaker;
@@ -20,47 +21,56 @@ namespace OpenAI
         public Transform player;
         public float interactionDistance = 3.0f;
         private InputData _inputData;
+        private GameObject textResponseObject;
+
+       private void Awake()
+        {
+            textResponseObject = GameObject.Find("TextResponse");
+        }
 
         private void Start()
         {
             _inputData = GetComponent<InputData>();
         }
 
-        private async void Update()
+      private async void Update()
+{
+    var names = Input.GetJoystickNames();
+    Console.WriteLine(names);
+
+    if (player != null)
+    {
+        float distance = Vector3.Distance(player.position, transform.position);
+
+        if (distance <= interactionDistance)
         {
-            var names = Input.GetJoystickNames();
-            Console.WriteLine(names);
-           
-            if (player != null)
+            _inputData._rightController.TryGetFeatureValue(CommonUsages.primaryButton, out bool Abutton);
+            _inputData._rightController.TryGetFeatureValue(CommonUsages.secondaryButton, out bool Bbutton);
+
+            if (Abutton == true && !isRecording)
             {
-                float distance = Vector3.Distance(player.position, transform.position);
+                isRecording = true;
+                speechToText.StartRecording();
+                Debug.Log("Start Recording!");
+            }
 
-                if (distance <= interactionDistance)
-                {
-                    _inputData._rightController.TryGetFeatureValue(CommonUsages.primaryButton, out bool Abutton);
-                    _inputData._rightController.TryGetFeatureValue(CommonUsages.secondaryButton, out bool Bbutton);
-                    // Player is within interaction distance, initiate conversation here.
-                    if (Abutton == true && !isRecording)
-                    {
-                        isRecording = true;
-                        speechToText.StartRecording();
-                        Debug.Log("Start Recording!");
-                    }
-
-                    if (Bbutton == true && isRecording)
-                    {
-                        isRecording = false;
-                        Debug.Log("Stop Recording!");
-                        string textResult = await speechToText.StopRecording();
-                        await SendReply(textResult);
-                    }
-                }
+            if (Bbutton == true && isRecording)
+            {
+                isRecording = false;
+                Debug.Log("Stop Recording!");
+                string textResult = await speechToText.StopRecording();
+                await SendReply(textResult);
             }
         }
-
+        else
+        {
+            //textResponseObject.gameObject.SetActive(false);
+        }
+    }
+}
         public async Task SendReply(string userMessage)
         {
-            string prompt = $"Act as a {npcName} in a chat room and reply to the questions. Don't break character. Don't ever mention that you are an AI model. Keep your replies short, no more than one or two sentences.";
+            string prompt = $"Act as a {npcName} in a chat room and reply to the questions. Don't break character. Don't ever mention that you are an AI model. Keep your replies short, no more than one or two sentences. Give the response in english and in bulgarian sepparated with blank line";
             var newMessage = new ChatMessage()
             {
                 Role = "user",
@@ -86,11 +96,22 @@ namespace OpenAI
                 message.Content = message.Content.Trim();
 
                 _messages.Add(message);
-                _npcResponse = message.Content;
+                npcResponse = message.Content;
+                var letterByLetterAnimators = FindObjectsOfType<LetterByLetterAnimator>();
+                 foreach (var animator in letterByLetterAnimators)
+                    {
+                        Debug.Log(npcName);
+                        Debug.Log(animator.npcName);
+                        if (animator.npcName == npcName)
+                        {
+                            animator.AnimateText(npcResponse);
+                        }
+                    }
+           
 
-                Debug.Log("NPC Response: " + _npcResponse);
+                Debug.Log(npcName +": " +  npcResponse);
 
-                speaker.Speak(_npcResponse);
+                speaker.Speak(npcResponse);
             }
             else
             {
