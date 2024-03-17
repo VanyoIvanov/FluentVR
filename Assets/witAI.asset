@@ -20,10 +20,19 @@ MonoBehaviour:
     isPrivate: 0
     createdAt: 2023-11-08T11:33:35-0800
     trainingStatus: 1
-    lastTrainDuration: 0
-    lastTrainedAt: 1969-12-31T16:00:00-0800
-    nextTrainAt: 1969-12-31T16:00:00-0800
-    intents: []
+    lastTrainDuration: 33
+    lastTrainedAt: 2024-03-17T07:16:04-0700
+    nextTrainAt: 2024-03-17T07:15:31-0700
+    intents:
+    - id: 3717850245126733
+      name: shoot_cannon_one
+      entities: []
+    - id: 1615006309039466
+      name: shoot_cannon_three
+      entities: []
+    - id: 316935274722543
+      name: shoot_cannon_two
+      entities: []
     entities: []
     traits: []
     versionTags: []
