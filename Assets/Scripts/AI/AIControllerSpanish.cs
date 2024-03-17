@@ -57,7 +57,7 @@ namespace OpenAI
 
         public async Task SendReply(string userMessage)
         {
-            string prompt = $"Actúa como {npcName} en una sala de chat y responde las preguntas. No rompas el carácter. Nunca menciones que eres un modelo de IA. Mantenga sus respuestas breves, no más de una o dos oraciones.";
+            string prompt = $"Actúa como {npcName} en una sala de chat y responde las preguntas. No rompas el carácter. Nunca menciones que eres un modelo de IA. Mantenga sus respuestas breves, no más de una o dos oraciones en español y en búlgaro.";
             var newMessage = new ChatMessage()
             {
                 Role = "user",
@@ -85,7 +85,18 @@ namespace OpenAI
                 _messages.Add(message);
                 _npcResponse = message.Content;
 
-                Debug.Log("NPC Response: " + _npcResponse);
+                var letterByLetterAnimators = FindObjectsOfType<LetterByLetterAnimator>();
+                 foreach (var animator in letterByLetterAnimators)
+                    {
+                        Debug.Log(npcName);
+                        Debug.Log(animator.npcName);
+                        if (animator.npcName == npcName)
+                        {
+                            animator.AnimateText(_npcResponse);
+                        }
+                    }
+
+                Debug.Log( npcName + ": " + _npcResponse);
 
                 GoogleCloudTTS.Synthesize(_npcResponse);
             }
