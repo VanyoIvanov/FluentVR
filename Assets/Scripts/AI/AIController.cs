@@ -107,11 +107,12 @@ namespace OpenAI
                             animator.AnimateText(npcResponse);
                         }
                     }
-           
 
                 Debug.Log(npcName +": " +  npcResponse);
 
-                speaker.Speak(npcResponse);
+                string englishText = npcResponse.Split('\n')[0];
+
+                speaker.Speak(englishText);
             }
             else
             {

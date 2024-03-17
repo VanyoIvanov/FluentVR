@@ -98,7 +98,9 @@ namespace OpenAI
 
                 Debug.Log( npcName + ": " + _npcResponse);
 
-                GoogleCloudTTS.Synthesize(_npcResponse);
+                string spanishText = _npcResponse.Split('\n')[0];
+
+                GoogleCloudTTS.Synthesize(spanishText);
             }
             else
             {
