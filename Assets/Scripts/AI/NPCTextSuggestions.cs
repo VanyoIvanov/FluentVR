@@ -24,7 +24,14 @@ public static class NPCTextSuggestions
             WinstonChurchill,
             QueenVictoria,
             FlorenceNightingale,
-            ThomasEdison
+            ThomasEdison,
+            German,
+            Italian,
+            Chinese,
+            Greek,
+            Turkish,
+            French,
+            Russian
         }
 
         public CharacterType characterType;
@@ -228,7 +235,135 @@ public static class NPCTextSuggestions
                     new ConversationStarter { mainText = "If you could give advice to aspiring inventors today, what would it be based on your own experiences?", translationText = "Ако можехте да дадете съвет на младите изобретатели днес, какъв би бил този съвет, базиран на вашите собствени преживявания?" },
                 }
             }
+        },
+        { Character.CharacterType.German, new Character
+            {
+                characterType = Character.CharacterType.German,
+                conversationStarters = new ConversationStarter[]
+                {
+                    new ConversationStarter { mainText = "Hallo, Heinrich! Wie geht es dir? Was hast du heute gemacht?", translationText = "Здравей, Хайнрих! Как си? Какво прави днес?" },
+                    new ConversationStarter { mainText = "Hey Heinrich, wie war dein Wochenende? Hast du etwas Besonderes unternommen?", translationText = "Здравей, Хайнрих! Как беше уикенда ти? Направил ли си нещо специално?" },
+                    new ConversationStarter { mainText = "Hallo Heinrich, ich habe gehört, dass du ein großer Fußballfan bist. Welches Team unterstützt du?", translationText = "Здравей, Хайнрих! Чух, че си голям фен на футбола. Кое е отбора, който подкрепяш?" },
+                    new ConversationStarter { mainText = "Heinrich, ich habe gehört, dass du gerne reist. Welches war dein Lieblingsreiseziel bisher?", translationText = "Хайнрих, чух, че обичаш да пътуваш. Кои е бил твоето любимо местоназначение до момента?" },
+                    new ConversationStarter { mainText = "Hallo Heinrich, was machst du beruflich? Bist du zufrieden mit deinem Job?", translationText = "Здравей, Хайнрих! Каква е професията ти? Доволен ли си от работата си?" },
+                    new ConversationStarter { mainText = "Hey Heinrich, ich habe gehört, du spielst gerne Gitarre. Seit wann spielst du schon?", translationText = "Хей, Хайнрих! Чух, че обичаш да свириш на китара. От какво време свириш?" },
+                    new ConversationStarter { mainText = "Hallo Heinrich, was machst du gerne in deiner Freizeit? Hast du besondere Hobbys?", translationText = "Здравей, Хайнрих! Какво обичаш да правиш в свободното си време? Имаш ли специални хобита?" },
+                    new ConversationStarter { mainText = "Heinrich, ich habe gehört, dass du gerne kochst. Was ist dein Lieblingsgericht, das du zubereitest?", translationText = "Хайнрих, чух, че обичаш да готвиш. Кое е твоето любимо ястие, което приготвяш?" },
+                    new ConversationStarter { mainText = "Hallo Heinrich, ich sehe, dass du gerne liest. Welches Buch liest du gerade?", translationText = "Здравей, Хайнрих! Виждам, че обичаш да четеш. Коя книга четеш в момента?" },
+                    new ConversationStarter { mainText = "Heinrich, ich habe gehört, dass du gerne wandern gehst. Was ist dein Lieblingswanderweg?", translationText = "Хайнрих, чух, че обичаш да ходиш на разходки. Кои е твоят любим маршрут за разходка?" },
+                }
+            }
+        },
+        { Character.CharacterType.Italian, new Character
+            {   
+                characterType = Character.CharacterType.Italian,
+                conversationStarters = new ConversationStarter[]
+                {
+                    new ConversationStarter { mainText = "Ciao Lorenzo! Come va? Cosa hai fatto oggi?", translationText = "Здравей, Лоренцо! Как си? Какво прави днес?" },
+                    new ConversationStarter { mainText = "Ehi Lorenzo, com'è stato il tuo fine settimana? Hai fatto qualcosa di speciale?", translationText = "Здравей, Лоренцо! Как беше уикенда ти? Направил ли си нещо специално?" },
+                    new ConversationStarter { mainText = "Ciao Lorenzo, ho sentito che sei un grande appassionato di calcio. Quale squadra tifi?", translationText = "Здравей, Лоренцо! Чух, че си голям фен на футбола. Кое е отбора, който подкрепяш?" },
+                    new ConversationStarter { mainText = "Lorenzo, ho sentito che ami viaggiare. Qual è stata la tua destinazione preferita finora?", translationText = "Лоренцо, чух, че обичаш да пътуваш. Кои е бил твоето любимо местоназначение до момента?" },
+                    new ConversationStarter { mainText = "Ciao Lorenzo, che lavoro fai? Sei soddisfatto del tuo lavoro?", translationText = "Здравей, Лоренцо! Каква е професията ти? Доволен ли си от работата си?" },
+                    new ConversationStarter { mainText = "Ehi Lorenzo, ho sentito che ti piace suonare la chitarra. Da quanto tempo suoni?", translationText = "Хей, Лоренцо! Чух, че обичаш да свириш на китара. От какво време свириш?" },
+                    new ConversationStarter { mainText = "Ciao Lorenzo, cosa ti piace fare nel tempo libero? Hai qualche hobby particolare?", translationText = "Здравей, Лоренцо! Какво обичаш да правиш в свободното си време? Имаш ли специални хобита?" },
+                    new ConversationStarter { mainText = "Lorenzo, ho sentito che ti piace cucinare. Qual è il tuo piatto preferito che prepari?", translationText = "Лоренцо, чух, че обичаш да готвиш. Кое е твоето любимо ястие, което приготвяш?" },
+                    new ConversationStarter { mainText = "Ciao Lorenzo, vedo che ti piace leggere. Quale libro stai leggendo in questo momento?", translationText = "Здравей, Лоренцо! Виждам, че обичаш да четеш. Коя книга четеш в момента?" },
+                    new ConversationStarter { mainText = "Lorenzo, ho sentito che ti piace fare escursioni. Qual è il tuo sentiero preferito?", translationText = "Лоренцо, чух, че обичаш да ходиш на разходки. Кои е твоят любим маршрут за разходка?" },
+                }
+            }
+        },
+        { Character.CharacterType.Chinese, new Character
+            {
+                characterType = Character.CharacterType.Chinese,
+                conversationStarters = new ConversationStarter[]
+                {
+                    new ConversationStarter { mainText = "你好，陈！最近过得怎么样？有什么新鲜事吗？", translationText = "Здравей, Чен! Как си? Има ли нещо ново?" },
+                    new ConversationStarter { mainText = "嗨，陈！你周末过得怎么样？有没有做什么特别的事情？", translationText = "Здравей, Чен! Как беше уикенда ти? Направил ли си нещо специално?" },
+                    new ConversationStarter { mainText = "你好，陈！我听说你是个足球迷。你支持哪个球队？", translationText = "Здравей, Чен! Чух, че си фен на футбола. Кой отбор подкрепяш?" },
+                    new ConversationStarter { mainText = "陈，我听说你喜欢旅行。迄今为止，你最喜欢的旅行目的地是哪里？", translationText = "Чен, чух, че обичаш да пътуваш. Кои е твоят любим местоназначение до момента?" },
+                    new ConversationStarter { mainText = "你好，陈！你的工作是做什么的？对你的工作满意吗？", translationText = "Здравей, Чен! Каква е професията ти? Доволен ли си от работата си?" },
+                    new ConversationStarter { mainText = "嘿，陈！我听说你喜欢弹吉他。你弹了多久了？", translationText = "Хей, Чен! Чух, че обичаш да свириш на китара. От какво време свириш?" },
+                    new ConversationStarter { mainText = "你好，陈！你在业余时间喜欢做什么？有什么特别的爱好吗？", translationText = "Здравей, Чен! Какво обичаш да правиш в свободното си време? Имаш ли специални хобита?" },
+                    new ConversationStarter { mainText = "陈，我听说你喜欢做饭。你最喜欢做的菜是什么？", translationText = "Чен, чух, че обичаш да готвиш. Кое е твоето любимо ястие, което приготвяш?" },
+                    new ConversationStarter { mainText = "你好，陈！我看到你喜欢阅读。你现在在读什么书？", translationText = "Здравей, Чен! Виждам, че обичаш да четеш. Коя книга четеш в момента?" },
+                    new ConversationStarter { mainText = "陈，我听说你喜欢徒步旅行。你最喜欢的徒步路线是什么？", translationText = "Чен, чух, че обичаш да ходиш на разходки. Кои е твоят любим маршрут за разходка?" },
+                }
+            }
+        },
+        { Character.CharacterType.Greek, new Character
+            {
+                characterType = Character.CharacterType.Greek,
+                conversationStarters = new ConversationStarter[]
+                {
+                    new ConversationStarter { mainText = "Γεια σου, Αθηνά! Τι κάνεις; Πώς περνάς τον ελεύθερο σου χρόνο;", translationText = "Здравей, Атина! Как си? Как прекарваш свободното си време?" },
+                    new ConversationStarter { mainText = "Γεια σου, Αθηνά! Ποιο είναι το αγαπημένο σου χόμπι;", translationText = "Здравей, Атина! Какво е твоето любимо хоби?" },
+                    new ConversationStarter { mainText = "Γεια σου, Αθηνά! Πώς περνάς το σαββατοκύριακο; Έκανες κάτι ενδιαφέρον;", translationText = "Здравей, Атина! Как беше уикенда ти? Направила ли нещо интересно?" },
+                    new ConversationStarter { mainText = "Αθηνά, έχω ακούσει ότι σου αρέσει η τέχνη. Ποιος είναι ο αγαπημένος σου καλλιτέχνης;", translationText = "Атина, чух, че обичаш изкуството. Кой е твоят любим художник?" },
+                    new ConversationStarter { mainText = "Γεια σου, Αθηνά! Τι βιβλίο διαβάζεις αυτήν την περίοδο;", translationText = "Здравей, Атина! Коя книга четеш в момента?" },
+                    new ConversationStarter { mainText = "Αθηνά, έχω ακούσει ότι σου αρέσει η μουσική. Ποιος είναι ο αγαπημένος σου μουσικός;", translationText = "Атина, чух, че обичаш музиката. Кой е твоят любим музикант?" },
+                    new ConversationStarter { mainText = "Γεια σου, Αθηνά! Πού σου αρέσει να πηγαίνεις για διακοπές;", translationText = "Здравей, Атина! Къде обичаш да отиваш на почивка?" },
+                    new ConversationStarter { mainText = "Αθηνά, έχω ακούσει ότι σου αρέσει να μαγειρεύεις. Ποιο είναι το αγαπημένο σου φαγητό;", translationText = "Атина, чух, че обичаш да готвиш. Какво е твоето любимо ястие?" },
+                    new ConversationStarter { mainText = "Γεια σου, Αθηνά! Ποιος είναι ο αγαπημένος σου τόπος στην πόλη;", translationText = "Здравей, Атина! Кой е твоят любим местен ъгъл в града?" },
+                    new ConversationStarter { mainText = "Αθηνά, έχω ακούσει ότι σου αρέσει να κάνεις πεζοπορία. Ποιο είναι το αγαπημένο σου μονοπάτι;", translationText = "Атина, чух, че обичаш да правиш пешеходни разходки. Кой е твоят любим път?" },
+                }
+            }
+        },
+        { Character.CharacterType.Turkish, new Character
+            {
+                characterType = Character.CharacterType.Turkish,
+                conversationStarters = new ConversationStarter[]
+                {
+                    new ConversationStarter { mainText = "Merhaba, Mustafa! Nasılsın? Bugün ne yaptın?", translationText = "Здравей, Мустафа! Как си? Какво правиш днес?" },
+                    new ConversationStarter { mainText = "Hey Mustafa, hafta sonun nasıldı? Özel bir şey yaptın mı?", translationText = "Здравей, Мустафа! Как беше уикенда ти? Направил ли си нещо специално?" },
+                    new ConversationStarter { mainText = "Merhaba Mustafa, büyük bir futbol fanatiği olduğunu duydum. Hangi takımı destekliyorsun?", translationText = "Здравей, Мустафа! Чух, че си голям фен на футбола. Кой отбор подкрепяш?" },
+                    new ConversationStarter { mainText = "Mustafa, seyahat etmeyi sevdiğini duydum. Şimdiye kadar en sevdiğin seyahat noktası hangisiydi?", translationText = "Мустафа, чух, че обичаш да пътуваш. Кои е твоят любим местоназначение до момента?" },
+                    new ConversationStarter { mainText = "Merhaba Mustafa, mesleğiniz nedir? İşinizden memnun musunuz?", translationText = "Здравей, Мустафа! Каква е професията ти? Доволен ли си от работата си?" },
+                    new ConversationStarter { mainText = "Hey Mustafa, gitar çalmayı sevdiğini duydum. Ne zamandır çalıyorsun?", translationText = "Хей, Мустафа! Чух, че обичаш да свириш на китара. От какво време свириш?" },
+                    new ConversationStarter { mainText = "Merhaba Mustafa, boş zamanlarında neler yaparsın? Özel hobilerin var mı?", translationText = "Здравей, Мустафа! Какво обичаш да правиш в свободното си време? Имаш ли специални хобита?" },
+                    new ConversationStarter { mainText = "Mustafa, yemek pişirmeyi sevdiğini duydum. En sevdiğin yemeği hangisi?", translationText = "Мустафа, чух, че обичаш да готвиш. Кое е твоето любимо ястие, което приготвяш?" },
+                    new ConversationStarter { mainText = "Merhaba Mustafa, okumayı sevdiğini görüyorum. Şu anda hangi kitabı okuyorsun?", translationText = "Здравей, Мустафа! Виждам, че обичаш да четеш. Коя книга четеш в момента?" },
+                    new ConversationStarter { mainText = "Mustafa, doğada yürümeyi sevdiğini duydum. En sevdiğin yürüyüş rotası nedir?", translationText = "Мустафа, чух, че обичаш да ходиш на разходки. Кои е твоят любим маршрут за разходка?" },
+                }
+            }
+        },
+        { Character.CharacterType.French, new Character
+            {
+                characterType = Character.CharacterType.French,
+                conversationStarters = new ConversationStarter[]
+                {
+                    new ConversationStarter { mainText = "Salut Jeanne d'Arc, quelles étaient tes pensées et sentiments lorsque tu as entendu les voix divines pour la première fois?", translationText = "Здравей, Жана д'Арк! Какви бяха твоите мисли и чувства, когато първи път чу гласовете на небесата?" },
+                    new ConversationStarter { mainText = "Bonjour Jeanne d'Arc, peux-tu me raconter une expérience surnaturelle que tu as vécue pendant la guerre?", translationText = "Здравей, Жана д'Арк! Можеш ли да ми разкажеш за някакъв свръхестествен опит, който преживя за време на войната?" },
+                    new ConversationStarter { mainText = "Salut Jeanne d'Arc, comment as-tu su que tu avais une mission divine? Quels signes as-tu reçus?", translationText = "Здравей, Жана д'Арк! Как разбра, че имаш божествена мисия? Какви знаци получи?" },
+                    new ConversationStarter { mainText = "Bonjour Jeanne d'Arc, qu'est-ce qui t'a motivée à te battre pour la France et à devenir une figure emblématique de la guerre?", translationText = "Здравей, Жана д'Арк! Какво те подтикна да се бориш за Франция и да станеш символ на войната?" },
+                    new ConversationStarter { mainText = "Salut Jeanne d'Arc, quelles étaient tes interactions avec le roi Charles VII? Comment s'est passée ta première rencontre avec lui?", translationText = "Здравей, Жана д'Арк! Какви бяха твоите взаимодействия с краля Шарл VII? Как протече твоят първи разговор с него?" },
+                    new ConversationStarter { mainText = "Bonjour Jeanne d'Arc, comment envisages-tu ton héritage et ton impact sur l'histoire de France?", translationText = "Здравей, Жана д'Арк! Как виждаш своето наследство и влияние върху историята на Франция?" },
+                    new ConversationStarter { mainText = "Salut Jeanne d'Arc, quels étaient tes espoirs et tes rêves pour l'avenir de la France après la guerre?", translationText = "Здравей, Жана д'Арк! Какви бяха надеждите и мечтите ти за бъдещето на Франция след войната?" },
+                    new ConversationStarter { mainText = "Bonjour Jeanne d'Arc, comment as-tu surmonté les difficultés et les obstacles pendant ta mission?", translationText = "Здравей, Жана д'Арк! Как преодоля трудностите и препятствията по време на твоята мисия?" },
+                    new ConversationStarter { mainText = "Salut Jeanne d'Arc, quels étaient tes moments les plus mémorables sur le champ de bataille?", translationText = "Здравей, Жана д'Арк! Какви бяха твоите най-запомнящи се моменти на бойното поле?" },
+                    new ConversationStarter { mainText = "Bonjour Jeanne d'Arc, comment envisages-tu ta place dans l'histoire de France? Quel message voudrais-tu transmettre aux générations futures?", translationText = "Здравей, Жана д'Арк! Как виждаш своето място в историята на Франция? Какво послание би искала да предадеш на бъдещите поколения?" }
+                }
+            }
+        },
+        { Character.CharacterType.Russian, new Character
+            {
+                characterType = Character.CharacterType.Russian,
+                conversationStarters = new ConversationStarter[]
+                {
+                    new ConversationStarter { mainText = "Привет, Борис! Как твои дела? Чем занимался сегодня?", translationText = "Здравей, Борис! Как си? Какво правиш днес?" },
+                    new ConversationStarter { mainText = "Привет, Борис! Как прошел твой уикенд? Делал что-нибудь особенное?", translationText = "Здравей, Борис! Как беше уикенда ти? Направил ли си нещо специално?" },
+                    new ConversationStarter { mainText = "Привет, Борис! Я слышал, что ты большой фанат футбола. Какая команда тебе нравится?", translationText = "Здравей, Борис! Чух, че си голям фен на футбола. Кой е отбора, който подкрепяш?" },
+                    new ConversationStarter { mainText = "Борис, я слышал, что ты любишь путешествовать. Какое было твоё любимое место для поездки?", translationText = "Борис, чух, че обичаш да пътуваш. Кои е бил твоето любимо местоназначение до момента?" },
+                    new ConversationStarter { mainText = "Привет, Борис! Какая у тебя профессия? Доволен ли ты своей работой?", translationText = "Здравей, Борис! Каква е професията ти? Доволен ли си от работата си?" },
+                    new ConversationStarter { mainText = "Привет, Борис! Я слышал, что ты играешь на гитаре. Сколько времени ты это делаешь?", translationText = "Здравей, Борис! Чух, че обичаш да свириш на китара. От какво време свириш?" },
+                    new ConversationStarter { mainText = "Привет, Борис! Что ты обычно делаешь в свободное время? Есть ли у тебя увлечения?", translationText = "Здравей, Борис! Какво обичаш да правиш в свободното си време? Имаш ли специални хобита?" },
+                    new ConversationStarter { mainText = "Борис, я слышал, что ты умеешь вкусно готовить. Какое твоё любимое блюдо?", translationText = "Борис, чух, че обичаш да готвиш. Кое е твоето любимо ястие, което приготвяш?" },
+                    new ConversationStarter { mainText = "Привет, Борис! Я вижу, что ты любишь читать. Какая книга у тебя сейчас на руках?", translationText = "Здравей, Борис! Виждам, че обичаш да четеш. Коя книга четеш в момента?" },
+                    new ConversationStarter { mainText = "Борис, я слышал, что ты любишь гулять на природе. Какой твой любимый маршрут для прогулок?", translationText = "Борис, чух, че обичаш да ходиш на разходки. Кои е твоят любим маршрут за разходка?" }
+                }
+            }
         }
+
+
         // Add more characters as needed
     };
 }
