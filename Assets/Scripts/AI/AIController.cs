@@ -70,7 +70,7 @@ namespace OpenAI
 }
         public async Task SendReply(string userMessage)
         {
-            string prompt = $"Act as a {npcName} in a chat room and reply to the questions. Don't break character. Don't ever mention that you are an AI model. Keep your replies short, no more than one or two sentences. Give the response in english and in bulgarian sepparated with blank line";
+            string prompt = $"Act as a {npcName} in a chat room and reply to the questions. Don't break character. Don't ever mention that you are an AI model. Keep your replies short, no more than one or two sentences. Give your response in english and in bulgarian sepparated with blank line";
             var newMessage = new ChatMessage()
             {
                 Role = "user",
