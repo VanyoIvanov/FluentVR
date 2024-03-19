@@ -1,16 +1,23 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR;
 
 public class GameMenuManager : MonoBehaviour
 {
     public Transform head;
     public float spawnDistance = 1;
     public GameObject menu;
-    public InputActionProperty showButton;
+    private InputData _inputData;
+
+    private void Start()
+    {
+        _inputData = GetComponent<InputData>();
+    }
 
     void Update()
     {
-        if (showButton.action.WasPressedThisFrame())
+        _inputData._leftController.TryGetFeatureValue(CommonUsages.menuButton, out bool MenuButton);
+        if (MenuButton == true)
         {
             menu.SetActive(!menu.activeSelf);
 
